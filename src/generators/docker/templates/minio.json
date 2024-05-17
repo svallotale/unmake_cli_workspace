@@ -1,0 +1,18 @@
+{
+  "name": "minio",
+  "image": "bitnami/minio:2023.9.30-debian-11-r2",
+  "volumes": [
+    "postgres_data:/var/lib/postgresql/data"
+  ],
+  "environment": [
+    "MINIO_ROOT_USER: svallotale",
+    "MINIO_ROOT_PASSWORD: svallotale",
+    "MINIO_DEFAULT_BUCKETS: images",
+    "BITNAMI_DEBUG: true"
+  ],
+  "ports": [
+    "9000:9000",
+    "9001:9001"
+  ],
+  "command": []
+}

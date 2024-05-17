@@ -1,0 +1,36 @@
+{
+  "last_updated": "2024-05-17 16:10:04.682611700 UTC",
+  "project": {
+    "name": "CHF",
+    "description": "CHF - marketplace for money and NFT TOKEN only EVM"
+  },
+  "docker": {
+    "dockerfile_path": "Dockerfile",
+    "compose_path": "compose.yml",
+    "services": [
+      {
+        "name": "postgresql",
+        "image": "postgres:16-alpine",
+        "volumes": [
+          "postgres_data:/var/lib/postgresql/data"
+        ],
+        "environment": [
+          "POSTGRES_USER: svallotale",
+          "POSTGRES_PASSWORD: svallotale",
+          "POSTGRES_DB: database"
+        ],
+        "ports": [
+          "5432:5432"
+        ],
+        "command": []
+      }
+    ]
+  },
+  "ci_cd": {
+    "git_target": {
+      "Github": {
+        "remote_path": "test.url"
+      }
+    }
+  }
+}
